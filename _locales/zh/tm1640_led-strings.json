@@ -1,0 +1,11 @@
+{
+	"tm1640_led.digitaltube|block":"初始化数码管clk引脚|%clk| dio引脚|%dio|亮度 %intensity|显示位数 %count",
+	"tm1640_led.showNumber|block":"数码管显示整数| %num",
+	"tm1640_led.showbit|block":"数码管显示整数(0-15)| %num|位置 %bit",
+	"tm1640_led.showhex|block":"数码管显示十六进制数| %num",
+	"tm1640_led.showDP|block":"数码管在位置| %bit|显示小数点 %show",
+	"tm1640_led.intensity|block":"设置数码管显示亮度| %val",
+	"tm1640_led.off|block":"关闭数码管显示",
+	"tm1640_led.on|block":"开启数码管显示",
+	"tm1640_led.clear|block":"清除数码管显示",
+}

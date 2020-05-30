@@ -1,0 +1,18 @@
+{
+    "name": "tm1640_led",
+    "version": "0.0.1",
+    "description": "Blocks for Hiwonder TM1640 digit display module",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts",
+        "_locales/zh/tm1640_led-strings.json"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true
+}
