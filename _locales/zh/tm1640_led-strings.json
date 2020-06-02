@@ -7,5 +7,5 @@
 	"tm1640_led.intensity|block":"设置数码管显示亮度| %val",
 	"tm1640_led.off|block":"关闭数码管显示",
 	"tm1640_led.on|block":"开启数码管显示",
-	"tm1640_led.clear|block":"清除数码管显示",
+	"tm1640_led.clear|block":"清除数码管显示"
 }

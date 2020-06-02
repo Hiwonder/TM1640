@@ -4,7 +4,7 @@
 //% weight=10 icon="8" color=#2896ff
 namespace tm1640_led {
 
-    let Digitaltube:TM1640LEDs
+    let Digitaltube: TM1640LEDs
     let TM1640_CMD1 = 0x40;
     let TM1640_CMD2 = 0xC0;
     let TM1640_CMD3 = 0x80;
@@ -13,7 +13,7 @@ namespace tm1640_led {
     /**
         * TM1640 LED display
         */
-       export class TM1640LEDs {
+    export class TM1640LEDs {
         buf: Buffer;
         clk: DigitalPin;
         dio: DigitalPin;
@@ -167,8 +167,8 @@ namespace tm1640_led {
      * @param dio the DIO pin for TM1640, eg: DigitalPin.P2
      * @param intensity the brightness of the LED, eg: 7
      * @param count the count of the LED, eg: 4
-     */   
-    function TM1640create(clk: DigitalPin,dio: DigitalPin,intensity: number, count: number): TM1640LEDs {
+     */
+    function TM1640create(clk: DigitalPin, dio: DigitalPin, intensity: number, count: number): TM1640LEDs {
         let digitaltube = new TM1640LEDs();
         digitaltube.clk = clk;
         digitaltube.dio = dio;
@@ -179,16 +179,16 @@ namespace tm1640_led {
         return digitaltube;
     }
 
-  /**
-     * @param clk the CLK pin for TM1640, eg: DigitalPin.P1
-     * @param dio the DIO pin for TM1640, eg: DigitalPin.P2
-     * @param intensity the brightness of the LED, eg: 7
-     * @param count the count of the LED, eg: 4
-     */
+    /**
+       * @param clk the CLK pin for TM1640, eg: DigitalPin.P1
+       * @param dio the DIO pin for TM1640, eg: DigitalPin.P2
+       * @param intensity the brightness of the LED, eg: 7
+       * @param count the count of the LED, eg: 4
+       */
     //% weight=98 blockId=digitaltube block="Initialize digital display module clk|%clk| dio|%dio| intensity %intensity|LED count %count"
     //% inlineInputMode=inline
-    export function digitaltube(clk: DigitalPin,dio: DigitalPin,intensity: number, count: number) {
-        Digitaltube = TM1640create(clk,dio,intensity,count);
+    export function digitaltube(clk: DigitalPin, dio: DigitalPin, intensity: number, count: number) {
+        Digitaltube = TM1640create(clk, dio, intensity, count);
     }
 
     /**
@@ -196,7 +196,7 @@ namespace tm1640_led {
      * @param num is a number, eg: 0
      */
     //% weight=96 blockId=showNumber block="digitaltube show number| %num"
-    export function showNumber(num: number)  {
+    export function showNumber(num: number) {
         Digitaltube.showNumber(num);
     }
 
@@ -227,7 +227,7 @@ namespace tm1640_led {
     //% weight=90 blockId=showDP block="digitaltube DotPoint at| %bit|show %show"
     export function showDP(bit: number = 1, show: boolean = true) {
         Digitaltube.showDP(bit, show);
-    } 
+    }
 
     /**
      * set TM1640 intensity, range is [0-8], 0 is off.
@@ -236,7 +236,7 @@ namespace tm1640_led {
     //% weight=88 blockId=intensity block=" digitaltube set intensity %val"
     export function intensity(val: number = 7) {
         Digitaltube.intensity(val);
-    } 
+    }
 
     /**
      * turn off LED. 
@@ -260,6 +260,6 @@ namespace tm1640_led {
     //%weight=82 blockId=clear blockGap=50 block="clear digitaltube"
     export function clear() {
         Digitaltube.clear();
-    }  
+    }
     
 }
