@@ -240,8 +240,8 @@ namespace tm1640_led {
     }
 
     /**
-       * @param clk the CLK pin for TM1640, eg: DigitalPin.P1
-       * @param dio the DIO pin for TM1640, eg: DigitalPin.P2
+       * @param clk the CLK pin for TM1640, eg: DisplayPin.P1
+       * @param dio the DIO pin for TM1640, eg: DisplayPin.P2
        * @param intensity the brightness of the LED, eg: 7
        * @param count the count of the LED, eg: 4
        */
