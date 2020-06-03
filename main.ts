@@ -161,6 +161,43 @@ namespace tm1640_led {
             this._write_dsp_ctrl();
         }
     }
+
+    export enum DisplayPin {
+        //% block="P0"
+        P0 = 0x00,        
+        //% block="P1"
+        P1 = 0x01,
+        //% block="P2"
+        P2 = 0x02,
+        //% block="P3"
+        P3 = 0x03,        
+        //% block="P4"
+        P4 = 0x04,
+        //% block="P5"
+        P5 = 0x05,
+        //% block="P6"
+        P6 = 0x06,        
+        //% block="P7"
+        P7 = 0x07,
+        //% block="P8"
+        P8 = 0x08,
+        //% block="P9"
+        P9 = 0x09,        
+        //% block="P10"
+        P10 = 0x0a,
+        //% block="P11"
+        P11 = 0x0b,   
+        //% block="P12"
+        P12 = 0x0c,        
+        //% block="P13"
+        P13 = 0x0d,
+        //% block="P14"
+        P14 = 0x0e,
+        //% block="P15"
+        P15 = 0x0f,             
+        //% block="P16"
+        P16 = 0x10
+    }
     /**
      * 创建 TM1640 对象.
      * @param clk the CLK pin for TM1640, eg: DigitalPin.P1
@@ -179,6 +216,29 @@ namespace tm1640_led {
         return digitaltube;
     }
 
+    function getDigitalPin(pin: DisplayPin): DigitalPin {
+        switch (pin)
+        {
+            case DisplayPin.P0: return DigitalPin.P0;
+            case DisplayPin.P1: return DigitalPin.P1;
+            case DisplayPin.P2: return DigitalPin.P2;
+            case DisplayPin.P3: return DigitalPin.P3;
+            case DisplayPin.P4: return DigitalPin.P4;
+            case DisplayPin.P5: return DigitalPin.P5;
+            case DisplayPin.P6: return DigitalPin.P6;
+            case DisplayPin.P7: return DigitalPin.P7;
+            case DisplayPin.P8: return DigitalPin.P8;
+            case DisplayPin.P9: return DigitalPin.P9;
+            case DisplayPin.P10: return DigitalPin.P10;
+            case DisplayPin.P11: return DigitalPin.P11;
+            case DisplayPin.P12: return DigitalPin.P12;
+            case DisplayPin.P13: return DigitalPin.P13;
+            case DisplayPin.P14: return DigitalPin.P14;
+            case DisplayPin.P15: return DigitalPin.P15;
+            case DisplayPin.P16: return DigitalPin.P16;
+        }
+    }
+
     /**
        * @param clk the CLK pin for TM1640, eg: DigitalPin.P1
        * @param dio the DIO pin for TM1640, eg: DigitalPin.P2
@@ -187,8 +247,10 @@ namespace tm1640_led {
        */
     //% weight=98 blockId=digitaltube block="Initialize digital display module clk|%clk| dio|%dio| intensity %intensity|LED count %count"
     //% inlineInputMode=inline
-    export function digitaltube(clk: DigitalPin, dio: DigitalPin, intensity: number, count: number) {
-        Digitaltube = TM1640create(clk, dio, intensity, count);
+    export function digitaltube(clk: DisplayPin, dio: DisplayPin, intensity: number, count: number) {
+        let clkDigital = getDigitalPin(clk);
+        let dioDigital = getDigitalPin(dio);
+        Digitaltube = TM1640create(clkDigital, dioDigital, intensity, count);
     }
 
     /**
